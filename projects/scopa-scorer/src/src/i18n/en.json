@@ -1,0 +1,30 @@
+{
+  "common": {
+    "appName": "Scopa Scorer",
+    "round": "Round",
+    "close": "Close"
+  },
+  "game": {
+    "newGame": "New Game",
+    "players": "Players",
+    "addPlayer": "Add Player",
+    "targetScore": "Target Score",
+    "startGame": "Start Game",
+    "endRound": "End Round",
+    "updateScore": "Update Score",
+    "pointsBreakdown": "Points Breakdown",
+    "scopa": "Scopa"
+  },
+  "scoring": {
+    "carte": "Cards",
+    "denari": "Coins",
+    "settebello": "Seven of Coins",
+    "primiera": "Prime",
+    "scope": "Sweeps",
+    "total": "Total"
+  },
+  "settings": {
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  }
+}

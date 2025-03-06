@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** Product Manager
-- **Current Phase:** Initial Requirements
-- **Next Steps:** Define product vision and requirements
+- **Active Role:** System Architect
+- **Current Phase:** System Design
+- **Next Steps:** Define or update technical architecture based on requirements
 - **Current PR:** None
 
 ## Timeline

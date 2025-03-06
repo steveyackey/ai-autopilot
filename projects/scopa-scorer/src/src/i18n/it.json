@@ -1,0 +1,30 @@
+{
+  "common": {
+    "appName": "Segnapunti Scopa",
+    "round": "Mano",
+    "close": "Chiudi"
+  },
+  "game": {
+    "newGame": "Nuova Partita",
+    "players": "Giocatori",
+    "addPlayer": "Aggiungi Giocatore",
+    "targetScore": "Punteggio Obiettivo",
+    "startGame": "Inizia Partita",
+    "endRound": "Fine Mano",
+    "updateScore": "Aggiorna Punteggio",
+    "pointsBreakdown": "Dettaglio Punti",
+    "scopa": "Scopa"
+  },
+  "scoring": {
+    "carte": "Carte",
+    "denari": "Denari",
+    "settebello": "Settebello",
+    "primiera": "Primiera",
+    "scope": "Scope",
+    "total": "Totale"
+  },
+  "settings": {
+    "darkMode": "Modalità Scura",
+    "language": "Lingua"
+  }
+}
