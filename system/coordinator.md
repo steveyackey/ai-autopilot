@@ -20,9 +20,9 @@ This file serves as the central coordination system for the AI-driven software d
 7. Product Manager: Iterate with new features/improvements
 
 ## Current State
-- Active Project: None
-- Current Role: None
-- Next Action: Use `NEW_PROJECT` to start a project
+- Active Project: scopa-scorer
+- Current Role: Reviewer
+- Next Action: Use `NEXT_ROLE scopa-scorer` to transition to Product Manager for next iteration
 
 ## Role Transition Logic
 When transitioning between roles, the coordinator will:
@@ -36,8 +36,9 @@ When transitioning between roles, the coordinator will:
 
 ### scopa-scorer
 - Status: Active
-- Current Role: QA Engineer
+- Current Role: Reviewer
 - Started: 2025-03-05
+- Current Iteration: 2
 
 ## Instructions for AI Assistant
 1. Read this coordinator file first to understand the current state
