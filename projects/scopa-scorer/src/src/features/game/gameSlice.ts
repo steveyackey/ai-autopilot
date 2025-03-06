@@ -22,6 +22,14 @@ interface GameState {
     timestamp: number;
     players: Player[];
     winner: string;
+    targetScore: number;
+  }[];
+  scoreHistory: {
+    playerId: string;
+    action: 'scopa' | 'update';
+    timestamp: number;
+    previousScore: Partial<Player['score']>;
+    newScore: Partial<Player['score']>;
   }[];
 }
 
@@ -31,6 +39,7 @@ const initialState: GameState = {
   targetScore: 11,
   isGameActive: false,
   gameHistory: [],
+  scoreHistory: [],
 };
 
 const calculateTotal = (player: Player) => {
@@ -51,13 +60,22 @@ export const gameSlice = createSlice({
       state.currentRound = 1;
       state.targetScore = action.payload.targetScore;
       state.isGameActive = true;
+      state.scoreHistory = [];
     },
     
     addScopa: (state, action: PayloadAction<string>) => {
       const player = state.players.find(p => p.id === action.payload);
       if (player) {
+        const previousScore = { ...player.score };
         player.score.scope += 1;
         player.score.total = calculateTotal(player);
+        state.scoreHistory.push({
+          playerId: player.id,
+          action: 'scopa',
+          timestamp: Date.now(),
+          previousScore,
+          newScore: { ...player.score }
+        });
       }
     },
     
@@ -67,8 +85,27 @@ export const gameSlice = createSlice({
     }>) => {
       const player = state.players.find(p => p.id === action.payload.playerId);
       if (player) {
+        const previousScore = { ...player.score };
         Object.assign(player.score, action.payload.score);
         player.score.total = calculateTotal(player);
+        state.scoreHistory.push({
+          playerId: player.id,
+          action: 'update',
+          timestamp: Date.now(),
+          previousScore,
+          newScore: { ...player.score }
+        });
+      }
+    },
+    
+    undoLastAction: (state) => {
+      const lastAction = state.scoreHistory[state.scoreHistory.length - 1];
+      if (lastAction) {
+        const player = state.players.find(p => p.id === lastAction.playerId);
+        if (player) {
+          Object.assign(player.score, lastAction.previousScore);
+        }
+        state.scoreHistory.pop();
       }
     },
     
@@ -79,7 +116,8 @@ export const gameSlice = createSlice({
         state.gameHistory.push({
           timestamp: Date.now(),
           players: JSON.parse(JSON.stringify(state.players)),
-          winner: winner.id
+          winner: winner.id,
+          targetScore: state.targetScore
         });
         state.isGameActive = false;
       }
@@ -91,9 +129,18 @@ export const gameSlice = createSlice({
       });
       state.currentRound = 1;
       state.isGameActive = true;
+      state.scoreHistory = [];
     }
   }
 });
 
-export const { startNewGame, addScopa, updateRoundScore, endRound, resetGame } = gameSlice.actions;
+export const { 
+  startNewGame, 
+  addScopa, 
+  updateRoundScore, 
+  endRound, 
+  resetGame,
+  undoLastAction 
+} = gameSlice.actions;
+
 export default gameSlice.reducer;

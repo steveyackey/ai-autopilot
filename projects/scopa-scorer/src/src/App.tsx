@@ -8,6 +8,7 @@ import { RootState } from './store';
 import { Header } from './components/organisms/Header';
 import { GameSetup } from './components/pages/GameSetup';
 import { ScoreTracker } from './components/organisms/ScoreTracker';
+import { MatchHistory } from './components/pages/MatchHistory';
 
 function App() {
   const { theme: themeMode } = useSelector((state: RootState) => state.settings);
@@ -47,6 +48,10 @@ function App() {
               <Route 
                 path="/game" 
                 element={isGameActive ? <ScoreTracker /> : <Navigate to="/" />} 
+              />
+              <Route 
+                path="/history" 
+                element={<MatchHistory />} 
               />
             </Routes>
           </Box>

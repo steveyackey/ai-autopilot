@@ -12,14 +12,19 @@ import {
   DialogContent,
   DialogActions,
   Chip,
+  Stack,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import UndoIcon from '@mui/icons-material/Undo';
 import { RootState } from '../../store';
-import { addScopa, updateRoundScore, endRound } from '../../features/game/gameSlice';
+import { addScopa, updateRoundScore, endRound, undoLastAction } from '../../features/game/gameSlice';
+import { RulesReference } from './RulesReference';
+import { useTranslation } from 'react-i18next';
 
 export const ScoreTracker = () => {
   const dispatch = useDispatch();
-  const { players, currentRound, isGameActive } = useSelector((state: RootState) => state.game);
+  const { t } = useTranslation();
+  const { players, currentRound, isGameActive, scoreHistory } = useSelector((state: RootState) => state.game);
   const [openScoring, setOpenScoring] = useState(false);
   const [selectedPlayer, setSelectedPlayer] = useState<string | null>(null);
 
@@ -40,11 +45,28 @@ export const ScoreTracker = () => {
     dispatch(updateRoundScore({ playerId, score }));
   };
 
+  const handleUndo = () => {
+    dispatch(undoLastAction());
+  };
+
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto', p: 2 }}>
-      <Typography variant="h5" gutterBottom>
-        Round {currentRound}
-      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+        <Typography variant="h5">
+          {t('common.round')} {currentRound}
+        </Typography>
+        <Stack direction="row" spacing={1}>
+          <Button
+            variant="outlined"
+            startIcon={<UndoIcon />}
+            onClick={handleUndo}
+            disabled={scoreHistory.length === 0}
+          >
+            {t('game.undo')}
+          </Button>
+          <RulesReference />
+        </Stack>
+      </Box>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 2 }}>
         {players.map((player) => (
@@ -56,13 +78,13 @@ export const ScoreTracker = () => {
               </Typography>
               
               <Box sx={{ mt: 2 }}>
-                <Typography variant="subtitle2">Points Breakdown:</Typography>
+                <Typography variant="subtitle2">{t('game.pointsBreakdown')}:</Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
-                  <Chip label={`Carte: ${player.score.carte}`} size="small" />
-                  <Chip label={`Denari: ${player.score.denari}`} size="small" />
-                  <Chip label={`Settebello: ${player.score.settebello}`} size="small" />
-                  <Chip label={`Scope: ${player.score.scope}`} size="small" />
-                  <Chip label={`Primiera: ${player.score.primiera}`} size="small" />
+                  <Chip label={`${t('scoring.carte')}: ${player.score.carte}`} size="small" />
+                  <Chip label={`${t('scoring.denari')}: ${player.score.denari}`} size="small" />
+                  <Chip label={`${t('scoring.settebello')}: ${player.score.settebello}`} size="small" />
+                  <Chip label={`${t('scoring.scope')}: ${player.score.scope}`} size="small" />
+                  <Chip label={`${t('scoring.primiera')}: ${player.score.primiera}`} size="small" />
                 </Box>
               </Box>
 
@@ -73,7 +95,7 @@ export const ScoreTracker = () => {
                   onClick={() => handleScopaClick(player.id)}
                   startIcon={<AddIcon />}
                 >
-                  Scopa
+                  {t('game.scopa')}
                 </Button>
                 <Button
                   variant="outlined"
@@ -83,7 +105,7 @@ export const ScoreTracker = () => {
                     setOpenScoring(true);
                   }}
                 >
-                  Update Score
+                  {t('game.updateScore')}
                 </Button>
               </Box>
             </CardContent>
@@ -98,17 +120,17 @@ export const ScoreTracker = () => {
           onClick={handleEndRound}
           disabled={!isGameActive}
         >
-          End Round
+          {t('game.endRound')}
         </Button>
       </Box>
 
       <Dialog open={openScoring} onClose={() => setOpenScoring(false)}>
-        <DialogTitle>Update Score</DialogTitle>
+        <DialogTitle>{t('game.updateScore')}</DialogTitle>
         <DialogContent>
           <Box sx={{ display: 'grid', gap: 2, mt: 2 }}>
             {['carte', 'denari', 'settebello', 'primiera'].map((type) => (
               <Box key={type} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography>{type.charAt(0).toUpperCase() + type.slice(1)}:</Typography>
+                <Typography>{t(`scoring.${type}`)}</Typography>
                 <IconButton
                   size="small"
                   onClick={() => selectedPlayer && handleUpdateScore(selectedPlayer, { [type]: 1 })}
@@ -120,7 +142,7 @@ export const ScoreTracker = () => {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpenScoring(false)}>Close</Button>
+          <Button onClick={() => setOpenScoring(false)}>{t('common.close')}</Button>
         </DialogActions>
       </Dialog>
     </Box>
