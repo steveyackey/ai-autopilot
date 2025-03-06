@@ -1,0 +1,38 @@
+{
+  "name": "Scopa Scorer",
+  "short_name": "Scopa",
+  "description": "Score tracker for the Italian card game Scopa",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/ai-autopilot/",
+  "start_url": "/ai-autopilot/",
+  "icons": [
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Game",
+      "short_name": "New Game",
+      "description": "Start a new game",
+      "url": "/ai-autopilot/"
+    },
+    {
+      "name": "Match History",
+      "short_name": "History",
+      "description": "View match history",
+      "url": "/ai-autopilot/history"
+    }
+  ]
+}
