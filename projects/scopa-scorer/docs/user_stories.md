@@ -11,12 +11,18 @@
 - As a player, I want to input end-of-round captured cards to calculate points automatically
 - As a player, I want to see a breakdown of points by category so I understand how the score was calculated
 - As a player, I want to undo my last score entry in case I make a mistake
+- As a player, I want the ability to both add and remove points in each category to easily correct mistakes
+- As a player, I want clear visual feedback when I update scores so I know my action was registered
+- As a player, I want to use checkbox-style toggles for category winners to quickly assign points
 
 ## Game Management
 - As a player, I want my game to be saved automatically so I don't lose progress if the app closes
 - As a player, I want to resume an interrupted game so we can continue where we left off
 - As a player, I want to view the history of past games so I can track performance over time
 - As a player, I want to export game results so I can share them with others
+- As a player, I want to reset the current game while keeping the same players so we can quickly start another round
+- As a player, I want to start a completely new game with different players when our session ends
+- As a player, I want confirmation before irreversible actions (reset, new game) so I don't lose data accidentally
 
 ## Rules and Reference
 - As a new player, I want to quickly access scoring rules so I understand how points are calculated

@@ -43,13 +43,15 @@ fi
 NEXT_INDEX=$(( (CURRENT_INDEX + 1) % ${#ROLES[@]} ))
 NEXT_ROLE=${ROLES[$NEXT_INDEX]}
 
-# Commit current changes before transitioning (but don't push yet)
+# Commit current changes before transitioning
 ./git_operations.sh commit "$PROJECT_NAME" "$CURRENT_ROLE" "$CURRENT_ITERATION"
+
+# Push changes after each role is complete to maintain history
+./git_operations.sh push
 
 # Special handling for transitions
 if [ "$CURRENT_ROLE" = "QA Engineer" ] && [ "$NEXT_ROLE" = "DevOps Engineer" ]; then
-  # After QA, push changes and create a pull request for review
-  ./git_operations.sh push
+  # After QA, create a pull request for review
   ./git_operations.sh create-pr "$PROJECT_NAME" "$CURRENT_ITERATION"
   echo "Created pull request for review"
 elif [ "$CURRENT_ROLE" = "Reviewer" ] && [ "$NEXT_ROLE" = "Product Manager" ]; then
@@ -63,12 +65,16 @@ elif [ "$CURRENT_ROLE" = "Reviewer" ] && [ "$NEXT_ROLE" = "Product Manager" ]; t
   echo "Advancing to iteration $NEXT_ITERATION"
   
   # Create a new branch for the next iteration
-  ./git_operations.sh create-branch "$PROJECT_NAME" "$NEXT_ROLE" "$NEXT_ITERATION"
+  ./git_operations.sh create-branch "$PROJECT_NAME" "$NEXT_ITERATION"
 else
-  # For other transitions, just create a branch if one doesn't exist
+  # For other transitions, check if we're at the beginning of an iteration
   if [ "$CURRENT_ROLE" = "Product Manager" ] && [ "$NEXT_ROLE" = "System Architect" ]; then
-    # When starting a new iteration, create a new branch
-    ./git_operations.sh create-branch "$PROJECT_NAME" "$NEXT_ROLE" "$CURRENT_ITERATION"
+    # If branch doesn't already exist for this iteration, create one
+    branch_name="iteration-${CURRENT_ITERATION}-${PROJECT_NAME}"
+    branch_name=$(echo "$branch_name" | tr '[:upper:]' '[:lower:]')
+    if ! git show-ref --quiet "refs/heads/$branch_name"; then
+      ./git_operations.sh create-branch "$PROJECT_NAME" "$CURRENT_ITERATION"
+    fi
   fi
 fi
 

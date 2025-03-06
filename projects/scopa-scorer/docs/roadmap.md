@@ -1,72 +1,106 @@
-# Product Roadmap Template
-
+# Scopa Scorer Roadmap
 ## Overview
-[Brief overview of the product roadmap and strategic direction]
+This roadmap outlines the development plan for the Scopa Scorer app, focusing on delivering value to users incrementally while addressing customer feedback.
 
-## Version 1.0: [Milestone Name]
-**Target completion: [estimation]**
-
+## Version 1.0: Core Scoring Experience (Completed)
+**Target completion: April 2023**
 ### Features
-1. **[Feature Group 1]**
-   - [Feature 1.1]: [Brief description]
-   - [Feature 1.2]: [Brief description]
-   - [Feature 1.3]: [Brief description]
-
-2. **[Feature Group 2]**
-   - [Feature 2.1]: [Brief description]
-   - [Feature 2.2]: [Brief description]
-
+1. **Basic Game Setup**
+   - Player registration with 2-4 players
+   - Target score setting
+   - Basic game initialization
+2. **Essential Scoring**
+   - Score tracking for all categories (Carte, Denari, Settebello, Scope, Primiera)
+   - Running score totals
+   - Score breakdown by category
+3. **Reference Material**
+   - Rules reference guide
+   - Primiera value chart
 ### Technical Foundations
-- [Technical foundation 1]: [Brief description]
-- [Technical foundation 2]: [Brief description]
-
+- React with TypeScript
+- Redux state management
+- Material UI component library
+- i18n for English and Italian languages
 ### Success Criteria
-- [Success criteria 1]
-- [Success criteria 2]
-- [Success criteria 3]
+- Users can successfully track scores for a complete game
+- All core scoring rules are implemented accurately
+- Interface works on both desktop and mobile devices
 
-## Version 1.1: [Milestone Name]
-**Target completion: [estimation]**
-
+## Version 1.1: Enhanced Scoring Interface (Current)
+**Target completion: June 2023**
 ### Features
-1. **[Feature Group 3]**
-   - [Feature 3.1]: [Brief description]
-   - [Feature 3.2]: [Brief description]
-
-2. **[Feature Group 4]**
-   - [Feature 4.1]: [Brief description]
-   - [Feature 4.2]: [Brief description]
-
+1. **Improved Scoring Controls**
+   - Add checkbox-style toggles for category winners
+   - Implement increment/decrement controls for all score types
+   - Provide visual feedback when scores are updated
+2. **Game Management Improvements**
+   - Add "New Game" button for completely fresh start
+   - Add "Reset Game" button to restart with same players
+   - Confirmation dialogs for irreversible actions
+3. **User Experience Refinements**
+   - Centered layout with consistent spacing
+   - Better mobile responsiveness
+   - Enhanced visual hierarchy
 ### Technical Enhancements
-- [Technical enhancement 1]: [Brief description]
-- [Technical enhancement 2]: [Brief description]
-
+- localStorage persistence for game state
+- Improved unit test coverage
 ### Success Criteria
-- [Success criteria 1]
-- [Success criteria 2]
+- Reduced user errors when scoring
+- Improved efficiency when entering scores
+- Positive feedback on scoring interface
 
-## Version 2.0: [Milestone Name]
-**Target completion: [estimation]**
-
+## Version 1.2: Game History & Offline Support
+**Target completion: August 2023**
 ### Features
-1. **[Feature Group 5]**
-   - [Feature 5.1]: [Brief description]
-   - [Feature 5.2]: [Brief description]
-
+1. **Match History**
+   - View history of past games
+   - Basic statistics by player
+   - Export game results
+2. **Offline Functionality**
+   - Complete offline support
+   - Service worker implementation
+   - Data synchronization when returning online
+3. **Visual Polish**
+   - Dark/light mode support
+   - Animation for score changes
+   - Improved accessibility
 ### Technical Enhancements
-- [Technical enhancement 3]: [Brief description]
-- [Technical enhancement 4]: [Brief description]
-
+- Complete PWA implementation
+- IndexedDB for robust offline storage
+- JSON export/import functionality
 ### Success Criteria
-- [Success criteria 1]
-- [Success criteria 2]
+- App works completely offline
+- Users can review past game history
+- Lighthouse score above 90 for PWA
+
+## Version 2.0: Enhanced Game Variants
+**Target completion: November 2023**
+### Features
+1. **Game Variants**
+   - Support for Scopone Scientifico
+   - Support for Re-Scopone
+   - Custom rule configurations
+2. **Advanced Statistics**
+   - Player performance over time
+   - Personal records and achievements
+   - Visual charts and graphs
+### Technical Enhancements
+- Modular rule system architecture
+- Analytics integration
+### Success Criteria
+- Active use of variant game modes
+- Increased retention and engagement
+- Positive reviews from tournament players
 
 ## Future Considerations
-- [Future feature 1]
-- [Future feature 2]
-- [Future feature 3]
+- Tournament management features
+- Social sharing of game results
+- Optional cloud synchronization with accounts
+- Card recognition using device camera
+- Integration with online Scopa platforms
 
 ## Prioritization Principles
-- [Principle 1]
-- [Principle 2]
-- [Principle 3]
+- User feedback drives feature prioritization
+- Refinements to core experience take precedence over new features
+- Accessibility and usability are non-negotiable requirements
+- Balance between quick wins and long-term technical investments
