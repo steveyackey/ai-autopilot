@@ -6,8 +6,8 @@ import { compression } from 'vite-plugin-compression2';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Changed from '/ai-autopilot/' to '/' to match nginx config
-  base: '/',
+  // Changed from '/' to '/ai-autopilot/' for GitHub Pages deployment
+  base: '/ai-autopilot/',
   plugins: [
     react(),
     splitVendorChunkPlugin(),
@@ -142,7 +142,7 @@ export default defineConfig({
           {
             // Match any same-origin route
             urlPattern: ({ url }) => {
-              return url.origin === self.location.origin;
+              return url.origin === window.location.origin;
             },
             handler: 'NetworkFirst',
             options: {
