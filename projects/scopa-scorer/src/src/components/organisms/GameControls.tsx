@@ -3,15 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Box,
   Button,
-  ButtonGroup,
   Dialog,
-  Typography,
   Stack,
   Tooltip
 } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import SettingsIcon from '@mui/icons-material/Settings';
 
 import { resetGame, startNewGame } from '../../features/game/gameSlice';
 import { ConfirmationDialog } from '../molecules/ConfirmationDialog';

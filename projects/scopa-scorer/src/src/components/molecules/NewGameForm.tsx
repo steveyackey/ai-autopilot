@@ -11,10 +11,8 @@ import {
   Paper,
   List,
   ListItem,
-  ListItemText,
   Alert
 } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import { useTranslation } from 'react-i18next';

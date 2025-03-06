@@ -61,13 +61,8 @@ export const ScoreControl: React.FC<ScoreControlProps> = ({
   const isIncrementDisabled = value >= max;
   const isDecrementDisabled = value <= min;
   
-  // Determine animation color based on value change
-  const getAnimationColor = () => {
-    if (value > prevValue) return '#4caf50'; // green for increase
-    if (value < prevValue) return '#f44336'; // red for decrease
-    return 'transparent';
-  };
-
+  // Removed unused getAnimationColor function
+  
   return (
     <Box 
       sx={{ 

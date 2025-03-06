@@ -6,7 +6,8 @@ import { compression } from 'vite-plugin-compression2';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/ai-autopilot/',
+  // Changed from '/ai-autopilot/' to '/' to match nginx config
+  base: '/',
   plugins: [
     react(),
     splitVendorChunkPlugin(),
@@ -71,7 +72,8 @@ export default defineConfig({
             label: 'Scopa Scorer Mobile View'
           }
         ],
-        start_url: '/ai-autopilot/',
+        // Updated to reflect the correct base URL
+        start_url: '/',
         display: 'standalone',
         orientation: 'any',
         display_override: ['window-controls-overlay', 'standalone'],
@@ -83,20 +85,23 @@ export default defineConfig({
           {
             name: 'New Game',
             short_name: 'New',
-            url: '/ai-autopilot/?action=new',
+            // Updated URLs
+            url: '/?action=new',
             description: 'Start a new game'
           },
           {
             name: 'Match History',
             short_name: 'History',
-            url: '/ai-autopilot/history',
+            // Updated URLs
+            url: '/history',
             description: 'View match history'
           }
         ],
         edge_side_panel: {
           preferred_width: 480
         },
-        id: '/ai-autopilot/'
+        // Updated ID
+        id: '/'
       },
       workbox: {
         // Force development service worker in all modes to ensure proper testing

@@ -284,11 +284,11 @@ export const gameSlice = createSlice({
       };
     },
     
-    requestNewGame: (state) => {
+    requestNewGame: () => {
       // This action doesn't modify state, it's just a signal for the UI to show confirmation dialog
     },
     
-    requestResetGame: (state) => {
+    requestResetGame: () => {
       // This action doesn't modify state, it's just a signal for the UI to show confirmation dialog
     },
     
