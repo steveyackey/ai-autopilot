@@ -19,16 +19,35 @@ if [ ! -d "projects/$PROJECT_NAME" ]; then
 fi
 
 # Read current role from project status file
-CURRENT_ROLE=$(grep -oP '(?<=\*\*Active Role:\*\* ).*' "$PROJECT_STATUS_FILE")
-CURRENT_ITERATION=$(grep -oP '(?<=\*\*Current Iteration:\*\* )\d+' "$PROJECT_STATUS_FILE")
+# Use a portable grep approach that works on both Linux and macOS
+if grep -q '\*\*Active Role:\*\*' "$PROJECT_STATUS_FILE"; then
+  # Extract role name and trim whitespace
+  CURRENT_ROLE=$(grep '\*\*Active Role:\*\*' "$PROJECT_STATUS_FILE" | sed 's/^- \*\*Active Role:\*\* //')
+  # Trim leading/trailing whitespace
+  CURRENT_ROLE=$(echo "$CURRENT_ROLE" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+  echo "DEBUG: Current role found: '$CURRENT_ROLE'"
+else
+  echo "Error: Could not find Active Role in project status file"
+  exit 1
+fi
+
+if grep -q '\*\*Current Iteration:\*\*' "$PROJECT_STATUS_FILE"; then
+  CURRENT_ITERATION=$(grep '\*\*Current Iteration:\*\*' "$PROJECT_STATUS_FILE" | sed 's/\*\*Current Iteration:\*\* //' | tr -d -c '0-9')
+else
+  echo "Error: Could not find Current Iteration in project status file"
+  exit 1
+fi
 
 # Define the role rotation sequence
 declare -a ROLES=("Product Manager" "System Architect" "Developer" "QA Engineer" "DevOps Engineer" "Reviewer")
 
 # Find the index of the current role
 CURRENT_INDEX=-1
+echo "DEBUG: Looking for role '$CURRENT_ROLE' in the rotation sequence"
+echo "DEBUG: Available roles: ${ROLES[*]}"
 for i in "${!ROLES[@]}"; do
-  if [ "${ROLES[$i]}" = "$CURRENT_ROLE" ]; then
+  echo "DEBUG: Comparing with '${ROLES[$i]}'"
+  if [ "$(echo "${ROLES[$i]}" | tr -d ' \t\n\r')" = "$(echo "$CURRENT_ROLE" | tr -d ' \t\n\r')" ]; then
     CURRENT_INDEX=$i
     break
   fi
@@ -61,7 +80,7 @@ elif [ "$CURRENT_ROLE" = "Reviewer" ] && [ "$NEXT_ROLE" = "Product Manager" ]; t
   
   # Update iteration count if going back to Product Manager
   NEXT_ITERATION=$((CURRENT_ITERATION + 1))
-  sed -i "s/\*\*Current Iteration:\*\* $CURRENT_ITERATION/\*\*Current Iteration:\*\* $NEXT_ITERATION/" "$PROJECT_STATUS_FILE"
+  sed -i.bak "s/\*\*Current Iteration:\*\* $CURRENT_ITERATION/\*\*Current Iteration:\*\* $NEXT_ITERATION/" "$PROJECT_STATUS_FILE" && rm -f "${PROJECT_STATUS_FILE}.bak"
   echo "Advancing to iteration $NEXT_ITERATION"
   
   # Create a new branch for the next iteration
@@ -79,7 +98,7 @@ else
 fi
 
 # Update the project status file
-sed -i "s/\*\*Active Role:\*\* $CURRENT_ROLE/\*\*Active Role:\*\* $NEXT_ROLE/" "$PROJECT_STATUS_FILE"
+sed -i.bak "s/\*\*Active Role:\*\* $CURRENT_ROLE/\*\*Active Role:\*\* $NEXT_ROLE/" "$PROJECT_STATUS_FILE" && rm -f "${PROJECT_STATUS_FILE}.bak"
 
 # Update phase information
 case "$NEXT_ROLE" in
@@ -109,11 +128,11 @@ case "$NEXT_ROLE" in
     ;;
 esac
 
-sed -i "s/\*\*Current Phase:\*\* .*$/\*\*Current Phase:\*\* $PHASE/" "$PROJECT_STATUS_FILE"
-sed -i "s/\*\*Next Steps:\*\* .*$/\*\*Next Steps:\*\* $NEXT_STEPS/" "$PROJECT_STATUS_FILE"
+sed -i.bak "s/\*\*Current Phase:\*\* .*$/\*\*Current Phase:\*\* $PHASE/" "$PROJECT_STATUS_FILE" && rm -f "${PROJECT_STATUS_FILE}.bak"
+sed -i.bak "s/\*\*Next Steps:\*\* .*$/\*\*Next Steps:\*\* $NEXT_STEPS/" "$PROJECT_STATUS_FILE" && rm -f "${PROJECT_STATUS_FILE}.bak"
 
 # Update coordinator.md
-sed -i "/### $PROJECT_NAME/,/Started:/s/- Current Role: .*/- Current Role: $NEXT_ROLE/" system/coordinator.md
+sed -i.bak "/### $PROJECT_NAME/,/Started:/s/- Current Role: .*/- Current Role: $NEXT_ROLE/" system/coordinator.md && rm -f "system/coordinator.md.bak"
 
 echo "Project '$PROJECT_NAME' has transitioned from '$CURRENT_ROLE' to '$NEXT_ROLE'"
 echo "Next step: The AI will assume the $NEXT_ROLE role to $NEXT_STEPS"
