@@ -1,0 +1,55 @@
+{
+  "common": {
+    "appName": "Segnapunti Scopa",
+    "round": "Mano",
+    "close": "Chiudi",
+    "rules": "Regole"
+  },
+  "game": {
+    "newGame": "Nuova Partita",
+    "players": "Giocatori",
+    "addPlayer": "Aggiungi Giocatore",
+    "targetScore": "Punteggio Obiettivo",
+    "startGame": "Inizia Partita",
+    "endRound": "Fine Mano",
+    "updateScore": "Aggiorna Punteggio",
+    "pointsBreakdown": "Dettaglio Punti",
+    "scopa": "Scopa",
+    "undo": "Annulla Ultima Azione"
+  },
+  "scoring": {
+    "carte": "Carte",
+    "denari": "Denari",
+    "settebello": "Settebello",
+    "primiera": "Primiera",
+    "scope": "Scope",
+    "total": "Totale"
+  },
+  "settings": {
+    "darkMode": "Modalità Scura",
+    "language": "Lingua"
+  },
+  "rules": {
+    "title": "Regole della Scopa",
+    "scoringRules": "Regole del Punteggio",
+    "category": "Categoria",
+    "description": "Descrizione",
+    "points": "Punti",
+    "carteDescription": "Punto assegnato per la conquista del maggior numero di carte",
+    "denariDescription": "Punto assegnato per la conquista del maggior numero di denari",
+    "settebelloDescription": "Punto assegnato per la conquista del Sette di Denari",
+    "scopeDescription": "Punto assegnato per ogni scopa (quando si prendono tutte le carte sul tavolo)",
+    "primieraDescription": "Punto assegnato per il maggior valore in ogni seme",
+    "primieraValues": "Valori delle Carte per la Primiera",
+    "card": "Carta",
+    "value": "Valore"
+  },
+  "history": {
+    "title": "Cronologia Partite",
+    "noGames": "Nessuna partita giocata",
+    "date": "Data",
+    "players": "Giocatori",
+    "winner": "Vincitore",
+    "score": "Punteggio Finale"
+  }
+}

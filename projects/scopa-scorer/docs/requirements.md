@@ -1,53 +1,67 @@
-# Requirements Template
+# Scopa Scorer Requirements
 
 ## Functional Requirements
 
-### Core Functionality
-1. [REQ-CORE-1] [Description of core requirement]
-2. [REQ-CORE-2] [Description of core requirement]
-3. [REQ-CORE-3] [Description of core requirement]
+### Game Setup
+- Users can start a new game with 2-4 players
+- Users can enter player names
+- Users can select game variants (standard Scopa)
+- Users can set target score for match end
 
-### User Interface
-1. [REQ-UI-1] [Description of UI requirement]
-2. [REQ-UI-2] [Description of UI requirement]
-3. [REQ-UI-3] [Description of UI requirement]
+### Scoring System
+- Automatic calculation of points for:
+  - Carte: 1 point for most cards captured
+  - Denari: 1 point for most coin cards captured
+  - Settebello: 1 point for capturing seven of coins
+  - Scope: 1 point per sweep
+  - Primiera: 1 point for highest prime value
+- Display running total of points for each player
+- Show breakdown of points by category
+- Support for end-of-round scoring
+- Support for end-of-match scoring
 
-### Data Management
-1. [REQ-DATA-1] [Description of data requirement]
-2. [REQ-DATA-2] [Description of data requirement]
-3. [REQ-DATA-3] [Description of data requirement]
+### Game Management
+- Save game state automatically
+- Resume interrupted games
+- View match history
+- Export game results
+- Undo last score entry
 
-### Integration
-1. [REQ-INT-1] [Description of integration requirement]
-2. [REQ-INT-2] [Description of integration requirement]
-3. [REQ-INT-3] [Description of integration requirement]
+### Rules Reference
+- Quick access to scoring rules
+- Visual guide for card values
+- Prime scoring reference table
 
 ## Non-Functional Requirements
 
 ### Performance
-1. [REQ-PERF-1] [Description of performance requirement]
-2. [REQ-PERF-2] [Description of performance requirement]
+- Load time under 2 seconds
+- Score updates in real-time
+- Offline functionality
+- Support for concurrent games
+
+### User Interface
+- Responsive design (mobile-first)
+- Touch-friendly interface
+- High contrast for card values
+- Language support for English and Italian
+- Intuitive navigation
+- Dark/light mode support
+
+### Technical Requirements
+- Progressive Web App (PWA) capabilities
+- Local storage for offline data
+- Cross-browser compatibility
+- Screen reader accessibility
+- Data backup/export functionality
 
 ### Security
-1. [REQ-SEC-1] [Description of security requirement]
-2. [REQ-SEC-2] [Description of security requirement]
-
-### Usability
-1. [REQ-USE-1] [Description of usability requirement]
-2. [REQ-USE-2] [Description of usability requirement]
-
-### Scalability
-1. [REQ-SCALE-1] [Description of scalability requirement]
-2. [REQ-SCALE-2] [Description of scalability requirement]
+- User data privacy
+- Secure storage of game history
+- Optional account system for sync
 
 ## Constraints
-1. [CON-1] [Description of constraint]
-2. [CON-2] [Description of constraint]
-
-## Assumptions
-1. [ASS-1] [Description of assumption]
-2. [ASS-2] [Description of assumption]
-
-## Future Considerations
-1. [FUT-1] [Description of future consideration]
-2. [FUT-2] [Description of future consideration]
+- Must work without internet connection
+- Must be usable on small screens (minimum 320px width)
+- Must be accessible to color-blind users
+- Must support both portrait and landscape orientations

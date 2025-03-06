@@ -33,6 +33,11 @@ When transitioning between roles, the coordinator will:
 5. Update this file with the new state
 
 ## Project Dashboard
+
+### scopa-scorer
+- Status: Active
+- Current Role: Reviewer
+- Started: 2025-03-05
 No active projects. Use `NEW_PROJECT` to begin.
 
 ## Instructions for AI Assistant

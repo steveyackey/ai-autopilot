@@ -1,0 +1,55 @@
+{
+  "common": {
+    "appName": "Scopa Scorer",
+    "round": "Round",
+    "close": "Close",
+    "rules": "Rules"
+  },
+  "game": {
+    "newGame": "New Game",
+    "players": "Players",
+    "addPlayer": "Add Player",
+    "targetScore": "Target Score",
+    "startGame": "Start Game",
+    "endRound": "End Round",
+    "updateScore": "Update Score",
+    "pointsBreakdown": "Points Breakdown",
+    "scopa": "Scopa",
+    "undo": "Undo Last Action"
+  },
+  "scoring": {
+    "carte": "Cards",
+    "denari": "Coins",
+    "settebello": "Seven of Coins",
+    "primiera": "Prime",
+    "scope": "Sweeps",
+    "total": "Total"
+  },
+  "settings": {
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  },
+  "rules": {
+    "title": "Scopa Rules",
+    "scoringRules": "Scoring Rules",
+    "category": "Category",
+    "description": "Description",
+    "points": "Points",
+    "carteDescription": "Point awarded for capturing the most cards",
+    "denariDescription": "Point awarded for capturing the most coin cards",
+    "settebelloDescription": "Point awarded for capturing the Seven of Coins",
+    "scopeDescription": "Point awarded for each sweep (clearing all cards from the table)",
+    "primieraDescription": "Point awarded for highest value in each suit",
+    "primieraValues": "Card Values for Primiera",
+    "card": "Card",
+    "value": "Value"
+  },
+  "history": {
+    "title": "Match History",
+    "noGames": "No games played yet",
+    "date": "Date",
+    "players": "Players",
+    "winner": "Winner",
+    "score": "Final Score"
+  }
+}

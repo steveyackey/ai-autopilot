@@ -4,10 +4,10 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** Product Manager
-- **Current Phase:** Initial Requirements
-- **Next Steps:** Define product vision and requirements
-- **Current PR:** None
+- **Active Role:** Reviewer
+- **Current Phase:** Review
+- **Next Steps:** Review code in the pull request and provide feedback
+- **Current PR:** #1 (https://github.com/steveyackey/ai-autopilot/pull/1)
 
 ## Timeline
 - **Project Started:** 2025-03-05
