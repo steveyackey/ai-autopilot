@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for package.json and package-lock.json in the scopa-scorer src directory
+    directory: "/projects/scopa-scorer/src"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+    # Allow up to 10 open pull requests at a time
+    open-pull-requests-limit: 10
+    # Assign security updates a higher priority
+    labels:
+      - "dependencies"
+      - "npm"
+    # Set automatic merge for patch and minor updates
+    # This will auto-merge patch and minor updates if they pass your CI
+    # For major updates you'll need to review manually
+    ignore:
+      # Ignore major version updates that might break compatibility
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
