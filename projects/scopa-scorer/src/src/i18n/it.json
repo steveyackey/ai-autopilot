@@ -3,26 +3,47 @@
     "appName": "Segnapunti Scopa",
     "round": "Mano",
     "close": "Chiudi",
-    "rules": "Regole"
+    "rules": "Regole",
+    "cancel": "Annulla",
+    "continue": "Continua",
+    "reset": "Reimposta",
+    "endRound": "Fine Mano",
+    "confirm": "Conferma"
   },
   "game": {
     "newGame": "Nuova Partita",
+    "resetGame": "Reimposta Partita",
     "players": "Giocatori",
+    "player": "Giocatore",
+    "playerNames": "Nomi dei Giocatori",
     "addPlayer": "Aggiungi Giocatore",
     "targetScore": "Punteggio Obiettivo",
     "startGame": "Inizia Partita",
     "endRound": "Fine Mano",
     "updateScore": "Aggiorna Punteggio",
+    "updateScoreFor": "Aggiorna Punteggio per {player}",
     "pointsBreakdown": "Dettaglio Punti",
     "scopa": "Scopa",
-    "undo": "Annulla Ultima Azione"
+    "undo": "Annulla Ultima Azione",
+    "undoTooltip": "Annulla l'ultimo cambiamento di punteggio",
+    "confirmNewGame": "Iniziare Nuova Partita?",
+    "newGameWarning": "Iniziare una nuova partita annullerà quella corrente. Sei sicuro di voler continuare?",
+    "confirmReset": "Reimpostare la Partita?",
+    "resetWarning": "Questa azione azzererà tutti i punteggi. Sei sicuro di voler reimpostare la partita?",
+    "confirmEndRound": "Terminare la Mano Corrente?",
+    "endRoundWarning": "Questo finalizzerà i punteggi per la mano corrente e avanzerà alla prossima."
   },
   "scoring": {
     "carte": "Carte",
+    "carteHelp": "Punto assegnato per la conquista del maggior numero di carte",
     "denari": "Denari",
+    "denariHelp": "Punto assegnato per la conquista del maggior numero di denari",
     "settebello": "Settebello",
+    "settebelloHelp": "Punto assegnato per la conquista del Sette di Denari",
     "primiera": "Primiera",
+    "primieraHelp": "Punto assegnato per il maggior valore in ogni seme",
     "scope": "Scope",
+    "scopeHelp": "Punto assegnato per ogni scopa (quando si prendono tutte le carte sul tavolo)",
     "total": "Totale"
   },
   "settings": {
@@ -51,5 +72,11 @@
     "players": "Giocatori",
     "winner": "Vincitore",
     "score": "Punteggio Finale"
+  },
+  "errors": {
+    "emptyPlayerNames": "Tutti i nomi dei giocatori devono essere compilati",
+    "duplicatePlayerNames": "Tutti i nomi dei giocatori devono essere unici",
+    "invalidTargetScore": "Il punteggio obiettivo deve essere almeno 1",
+    "required": "Obbligatorio"
   }
 }

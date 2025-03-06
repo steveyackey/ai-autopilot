@@ -6,11 +6,10 @@
 # Function to create a new branch for a project iteration
 create_branch() {
   local project_name=$1
-  local role=$2
-  local iteration=$3
+  local iteration=$2
   
-  # Format: iteration-N-role (e.g., iteration-1-developer)
-  local branch_name="iteration-${iteration}-${role// /-}"
+  # Format: iteration-N-project_name (e.g., iteration-1-scopa-scorer)
+  local branch_name="iteration-${iteration}-${project_name}"
   branch_name=$(echo "$branch_name" | tr '[:upper:]' '[:lower:]')
   
   echo "Creating branch: $branch_name"
@@ -140,11 +139,11 @@ merge_pull_request() {
 # Main script logic based on command
 case "$1" in
   "create-branch")
-    if [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ]; then
-      echo "Usage: $0 create-branch <project_name> <role> <iteration>"
+    if [ -z "$2" ] || [ -z "$3" ]; then
+      echo "Usage: $0 create-branch <project_name> <iteration>"
       exit 1
     fi
-    create_branch "$2" "$3" "$4"
+    create_branch "$2" "$3"
     ;;
   
   "commit")

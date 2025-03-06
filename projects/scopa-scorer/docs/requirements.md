@@ -19,6 +19,8 @@
 - Show breakdown of points by category
 - Support for end-of-round scoring
 - Support for end-of-match scoring
+- Interactive scoring controls with both increment and decrement options
+- Visual feedback when score changes are applied
 
 ### Game Management
 - Save game state automatically
@@ -26,6 +28,9 @@
 - View match history
 - Export game results
 - Undo last score entry
+- Reset current game without starting a new match
+- Start a new game with new players and settings
+- Confirmation dialogs for irreversible actions (reset, new game)
 
 ### Rules Reference
 - Quick access to scoring rules
@@ -47,6 +52,8 @@
 - Language support for English and Italian
 - Intuitive navigation
 - Dark/light mode support
+- Clear visual feedback for all user actions
+- Consistent button styling and placement
 
 ### Technical Requirements
 - Progressive Web App (PWA) capabilities
