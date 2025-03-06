@@ -36,9 +36,8 @@ When transitioning between roles, the coordinator will:
 
 ### scopa-scorer
 - Status: Active
-- Current Role: Reviewer
+- Current Role: QA Engineer
 - Started: 2025-03-05
-No active projects. Use `NEW_PROJECT` to begin.
 
 ## Instructions for AI Assistant
 1. Read this coordinator file first to understand the current state

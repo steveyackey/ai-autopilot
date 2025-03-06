@@ -3,26 +3,47 @@
     "appName": "Scopa Scorer",
     "round": "Round",
     "close": "Close",
-    "rules": "Rules"
+    "rules": "Rules",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "reset": "Reset",
+    "endRound": "End Round",
+    "confirm": "Confirm"
   },
   "game": {
     "newGame": "New Game",
+    "resetGame": "Reset Game",
     "players": "Players",
+    "player": "Player",
+    "playerNames": "Player Names",
     "addPlayer": "Add Player",
     "targetScore": "Target Score",
     "startGame": "Start Game",
     "endRound": "End Round",
     "updateScore": "Update Score",
+    "updateScoreFor": "Update Score for {player}",
     "pointsBreakdown": "Points Breakdown",
     "scopa": "Scopa",
-    "undo": "Undo Last Action"
+    "undo": "Undo Last Action",
+    "undoTooltip": "Undo the last score change",
+    "confirmNewGame": "Start New Game?",
+    "newGameWarning": "Starting a new game will discard the current game progress. Are you sure you want to continue?",
+    "confirmReset": "Reset Game?",
+    "resetWarning": "This will reset all scores to zero. Are you sure you want to reset the game?",
+    "confirmEndRound": "End Current Round?",
+    "endRoundWarning": "This will finalize the scores for the current round and advance to the next round."
   },
   "scoring": {
     "carte": "Cards",
+    "carteHelp": "Point awarded for capturing the most cards",
     "denari": "Coins",
+    "denariHelp": "Point awarded for capturing the most coin cards",
     "settebello": "Seven of Coins",
+    "settebelloHelp": "Point awarded for capturing the Seven of Coins",
     "primiera": "Prime",
+    "primieraHelp": "Point awarded for highest value in each suit",
     "scope": "Sweeps",
+    "scopeHelp": "Point awarded for each sweep (clearing all cards from the table)",
     "total": "Total"
   },
   "settings": {
@@ -51,5 +72,11 @@
     "players": "Players",
     "winner": "Winner",
     "score": "Final Score"
+  },
+  "errors": {
+    "emptyPlayerNames": "All player names must be filled",
+    "duplicatePlayerNames": "All player names must be unique",
+    "invalidTargetScore": "Target score must be at least 1",
+    "required": "Required"
   }
 }
