@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** Developer
-- **Current Phase:** Implementation
-- **Next Steps:** Implement features according to requirements and architecture
+- **Active Role:** QA Engineer
+- **Current Phase:** Testing
+- **Next Steps:** Test implementation and identify issues
 - **Current PR:** None
 
 ## Timeline

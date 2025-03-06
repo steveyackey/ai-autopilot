@@ -39,7 +39,7 @@ export const MatchHistory = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {gameHistory.map((game, index) => {
+              {gameHistory.map((game) => {
                 const winner = game.players.find(p => p.id === game.winner);
                 return (
                   <TableRow key={game.timestamp}>
