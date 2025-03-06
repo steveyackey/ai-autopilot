@@ -1,0 +1,92 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows manual triggering of the workflow
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up environment
+        # Change this to match your project's language/framework
+        # Example for Node.js:
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        # Example for Node.js:
+        run: npm ci
+        
+      - name: Build
+        # Example for Node.js:
+        run: npm run build
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: dist/
+          
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up environment
+        # Change this to match your project's language/framework
+        # Example for Node.js:
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        # Example for Node.js:
+        run: npm ci
+        
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-output
+          path: dist/
+          
+      - name: Run tests
+        # Example for Node.js:
+        run: npm test
+        
+      - name: Generate test report
+        run: echo "Generate test report" # Replace with actual command
+        
+  deploy-dev:
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    environment: development
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-output
+          path: dist/
+          
+      - name: Deploy to development
+        run: echo "Deploy to development environment" # Replace with actual deployment command
+        
+      - name: Verify deployment
+        run: echo "Verify deployment succeeded" # Replace with actual verification command
+
+# Add staging and production deployment jobs as needed
+# Ensure proper environment protection rules are set up in GitHub repository settings
