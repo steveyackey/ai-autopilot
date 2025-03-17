@@ -56,7 +56,7 @@
     "vite-bundle-visualizer": "^1.0.0",
     "vite-plugin-compression2": "^0.11.0",
     "vite-plugin-pwa": "^0.21.1",
-    "vitest": "^3.0.7",
+    "vitest": "^3.0.9",
     "workbox-window": "^7.0.0"
   },
   "pwa-assets-generator": {
