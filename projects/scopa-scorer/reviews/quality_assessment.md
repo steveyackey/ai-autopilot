@@ -4,10 +4,10 @@
 The code is well-organized and easy to navigate. The project structure follows a logical pattern.
 
 ## Performance Considerations
-Performance is generally good, but some areas could be optimized for better efficiency.
+Performance is generally good.
 
 ## Security Considerations
-Security measures appear adequate, but a thorough security audit is recommended.
+The CI/CD pipeline includes a security audit using ESLint with security plugins.
 
 ## User Experience
 The user interface is intuitive and user-friendly.

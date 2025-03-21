@@ -10,6 +10,7 @@ import { GameSetup } from './components/pages/GameSetup';
 import { ScoreTracker } from './components/organisms/ScoreTracker';
 import { GameControls } from './components/organisms/GameControls';
 import { MatchHistory } from './components/pages/MatchHistory';
+import { Feedback } from './components/pages/Feedback'; // Import Feedback component
 
 function App() {
   const { theme: themeMode } = useSelector((state: RootState) => state.settings);
@@ -83,6 +84,10 @@ function App() {
                   path="/history" 
                   element={<MatchHistory />} 
                 />
+                <Route 
+                  path="/feedback" 
+                  element={<Feedback />} 
+                /> {/* Add Feedback route */}
               </Routes>
             </Paper>
           </Box>
