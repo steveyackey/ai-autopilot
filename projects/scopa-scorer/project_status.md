@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** System Architect
-- **Current Phase:** System Design
-- **Next Steps:** Define or update technical architecture based on requirements
+- **Active Role:** Developer
+- **Current Phase:** Implementation
+- **Next Steps:** Implement features according to requirements and architecture
   1. Merge current PR
   2. Plan features for iteration 3
   3. Update roadmap and requirements
