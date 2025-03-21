@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** DevOps Engineer
-- **Current Phase:** Verification
-- **Next Steps:** Complete verification of changes against specifications
+- **Active Role:** Reviewer
+- **Current Phase:** Review
+- **Next Steps:** Review code in the pull request and provide feedback
   1. Merge current PR
   2. Plan features for iteration 3
   3. Update roadmap and requirements
