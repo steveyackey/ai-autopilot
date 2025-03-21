@@ -36,7 +36,7 @@ When transitioning between roles, the coordinator will:
 
 ### scopa-scorer
 - Status: Active
-- Current Role: Developer
+- Current Role: QA Engineer
 - Started: 2025-03-05
 - Current Iteration: 2
 
