@@ -50,7 +50,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-security": "^2.1.0",
     "jsdom": "^26.0.0",
-    "lightningcss": "^1.23.0",
+    "lightningcss": "^1.29.3",
     "terser": "^5.27.0",
     "typescript": "^5.3.3",
     "vite": "^6.2.0",
