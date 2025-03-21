@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** Reviewer
-- **Current Phase:** Code Review Complete
-- **Next Steps:** Transition to Product Manager for next iteration
+- **Active Role:** Product Manager
+- **Current Phase:** Requirements Definition
+- **Next Steps:** Update product vision and define requirements for the current iteration
   1. Merge current PR
   2. Plan features for iteration 3
   3. Update roadmap and requirements
@@ -19,7 +19,7 @@ A web application for scoring Italian card game Scopa
 - **Review Completed:** 2025-03-06
 
 ## Iterations
-- **Current Iteration:** 2
+- **Current Iteration:** 3
 
 ## Implementation Summary
 

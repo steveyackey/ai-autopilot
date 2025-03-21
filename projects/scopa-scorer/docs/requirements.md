@@ -1,74 +1,21 @@
-# Scopa Scorer Requirements
+# Requirements
 
 ## Functional Requirements
-
-### Game Setup
-- Users can start a new game with 2-4 players
-- Users can enter player names
-- Users can select game variants (standard Scopa)
-- Users can set target score for match end
-
-### Scoring System
-- Automatic calculation of points for:
-  - Carte: 1 point for most cards captured
-  - Denari: 1 point for most coin cards captured
-  - Settebello: 1 point for capturing seven of coins
-  - Scope: 1 point per sweep
-  - Primiera: 1 point for highest prime value
-- Display running total of points for each player
-- Show breakdown of points by category
-- Support for end-of-round scoring
-- Support for end-of-match scoring
-- Interactive scoring controls with both increment and decrement options
-- Visual feedback when score changes are applied
-
-### Game Management
-- Save game state automatically
-- Resume interrupted games
-- View match history
-- Export game results
-- Undo last score entry
-- Reset current game without starting a new match
-- Start a new game with new players and settings
-- Confirmation dialogs for irreversible actions (reset, new game)
-
-### Rules Reference
-- Quick access to scoring rules
-- Visual guide for card values
-- Prime scoring reference table
+- Implement user feedback features:
+    - Allow users to submit feedback through the application.
+    - Store user feedback in a database for analysis.
+    - Display aggregated feedback to administrators.
+- Implement security audit features:
+    - Conduct automated security scans on the codebase.
+    - Generate security audit reports.
+    - Provide recommendations for addressing security vulnerabilities.
+- Implement code review process improvements:
+    - Integrate code review checklists into the development workflow.
+    - Track code review metrics (e.g., time spent, issues found).
+    - Provide feedback on the code review process to improve efficiency.
 
 ## Non-Functional Requirements
-
-### Performance
-- Load time under 2 seconds
-- Score updates in real-time
-- Offline functionality
-- Support for concurrent games
-
-### User Interface
-- Responsive design (mobile-first)
-- Touch-friendly interface
-- High contrast for card values
-- Language support for English and Italian
-- Intuitive navigation
-- Dark/light mode support
-- Clear visual feedback for all user actions
-- Consistent button styling and placement
-
-### Technical Requirements
-- Progressive Web App (PWA) capabilities
-- Local storage for offline data
-- Cross-browser compatibility
-- Screen reader accessibility
-- Data backup/export functionality
-
-### Security
-- User data privacy
-- Secure storage of game history
-- Optional account system for sync
-
-## Constraints
-- Must work without internet connection
-- Must be usable on small screens (minimum 320px width)
-- Must be accessible to color-blind users
-- Must support both portrait and landscape orientations
+- Performance: The application should handle large datasets efficiently.
+- Security: The application should be secure and protect user data.
+- Usability: The application should be easy to use and navigate.
+- Maintainability: The codebase should be well-organized and easy to maintain.
