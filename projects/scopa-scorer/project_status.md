@@ -4,13 +4,13 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** QA Engineer
+- **Active Role:** DevOps Engineer
 - **Current Phase:** Verification
 - **Next Steps:** Complete verification of changes against specifications
   1. Merge current PR
   2. Plan features for iteration 3
   3. Update roadmap and requirements
-- **Current PR:** Iteration 2 Review Complete
+- **Current PR:** #14 (https://github.com/steveyackey/ai-autopilot/pull/14)
 
 ## Timeline
 - **Project Started:** 2025-03-05
