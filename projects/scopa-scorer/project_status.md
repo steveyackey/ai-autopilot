@@ -4,9 +4,9 @@
 A web application for scoring Italian card game Scopa
 
 ## Current Status
-- **Active Role:** Product Manager
-- **Current Phase:** Requirements Definition
-- **Next Steps:** Update product vision and define requirements for the current iteration
+- **Active Role:** System Architect
+- **Current Phase:** System Design
+- **Next Steps:** Define or update technical architecture based on requirements
   1. Merge current PR
   2. Plan features for iteration 3
   3. Update roadmap and requirements
